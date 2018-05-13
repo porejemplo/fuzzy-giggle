@@ -533,6 +533,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        //seleccion posicon
         int rand = Random.Range(0, freeTiles.Count);
 
         int x = freeTiles[rand].x;
@@ -541,6 +542,7 @@ public class GameManager : MonoBehaviour
         rand = Random.Range(0, baraja.Count);
         allTiles[x, y].ocupy = true;
 
+        //Spawn
         if (loadLevel.mazmorra[baraja[rand]].tT == TileTipe.Enemy)
             allTiles[x, y].Id = Instantiate(Enemy);
         else
