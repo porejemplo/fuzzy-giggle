@@ -20,10 +20,10 @@ MonoBehaviour:
   mazmorra:
   - Id: {fileID: 11400000, guid: 083b349b1ed242f4f8b8ba3601cc5541, type: 2}
     tT: 2
-    cantidad: 1
+    cantidad: 3
   - Id: {fileID: 11400000, guid: 6831bae4432aecc47a586d653f9b6fa3, type: 2}
     tT: 2
-    cantidad: 3
+    cantidad: 1
   - Id: {fileID: 11400000, guid: 15c19bcb643ec084994540887818cb1b, type: 2}
     tT: 2
     cantidad: 2

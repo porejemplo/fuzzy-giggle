@@ -20,16 +20,16 @@ MonoBehaviour:
   mazmorra:
   - Id: {fileID: 11400000, guid: 15c19bcb643ec084994540887818cb1b, type: 2}
     tT: 2
-    cantidad: 3
+    cantidad: 2
   - Id: {fileID: 11400000, guid: 2a8bffa2906c71d47b206ce4ec438c22, type: 2}
     tT: 2
-    cantidad: 2
+    cantidad: 3
   - Id: {fileID: 11400000, guid: 06826e9a9f804f24a86bb73bfdb45e8d, type: 2}
     tT: 2
-    cantidad: 1
+    cantidad: 2
   - Id: {fileID: 11400000, guid: 3c9ecd06cbf474a4a8943cca8ad2ec99, type: 2}
     tT: 2
-    cantidad: 1
+    cantidad: 2
   - Id: {fileID: 11400000, guid: 8694ab964a9b5584789d3aed2aafd24b, type: 2}
     tT: 4
     cantidad: 1
