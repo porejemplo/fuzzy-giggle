@@ -512,6 +512,9 @@ public class GameManager : MonoBehaviour
         {
             for (int y = 0; y < tamano; y++)
             {
+                if (allTiles[x,y].Id)
+                    Destroy(allTiles[x,y].Id);
+                    
                 allTiles[x, y].Reset(true);
 
                 allTiles[x, y].Pos = new Vector2(x + xOffset + transform.position.x, y + yOffset + transform.position.y);
