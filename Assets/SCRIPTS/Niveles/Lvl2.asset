@@ -15,8 +15,8 @@ MonoBehaviour:
     Rows:
     - Cols: 01000000
     - Cols: 00000000
-    - Cols: 00000000
-    - Cols: 01000001
+    - Cols: 00000001
+    - Cols: 00000001
   mazmorra:
   - Id: {fileID: 11400000, guid: 15c19bcb643ec084994540887818cb1b, type: 2}
     tT: 2
@@ -25,14 +25,11 @@ MonoBehaviour:
     tT: 2
     cantidad: 3
   - Id: {fileID: 11400000, guid: 9f7dd2044a0206846ad4b86fdd95c2cb, type: 2}
-    tT: 4
+    tT: 2
     cantidad: 2
   - Id: {fileID: 11400000, guid: 9744f0bf01d3b0b40af74c878c185be5, type: 2}
-    tT: 4
+    tT: 2
     cantidad: 1
-  - Id: {fileID: 11400000, guid: 444df45a2ed187a408d36069d246f361, type: 2}
-    tT: 4
-    cantidad: 2
   - Id: {fileID: 11400000, guid: c3e0d3d6493f8ad42b77ba8db83e5b58, type: 2}
     tT: 4
     cantidad: 1
