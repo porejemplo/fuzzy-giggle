@@ -69,9 +69,6 @@ MonoBehaviour:
   - Id: {fileID: 11400000, guid: 5052b9d63c1c07f4fbe2a01de1377264, type: 2}
     tT: 4
     cantidad: 1
-  - Id: {fileID: 11400000, guid: 444df45a2ed187a408d36069d246f361, type: 2}
-    tT: 4
-    cantidad: 1
   - Id: {fileID: 11400000, guid: c3e0d3d6493f8ad42b77ba8db83e5b58, type: 2}
     tT: 4
     cantidad: 1

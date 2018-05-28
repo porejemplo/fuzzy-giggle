@@ -43,10 +43,10 @@ public class GameManager : MonoBehaviour
 #region Start & Update
     private void Start()
     {
-        for(int i = 0; i<100; i++)
-        {
-            Debug.Log(Mathf.FloorToInt(mappingQuality.Evaluate(Random.value)));
-        }
+        // for(int i = 0; i<100; i++)
+        // {
+        //     Debug.Log(Mathf.FloorToInt(mappingQuality.Evaluate(Random.value)));
+        // }
         SpawnBoard();
     }
 
@@ -179,11 +179,11 @@ public class GameManager : MonoBehaviour
         State = GameState.Playing;
 
         // Debug.Log(allTiles[0, 4].tT + " | " + allTiles[1, 4].tT + " | " + allTiles[2, 4].tT + " | " + allTiles[3, 4].tT + " | " + allTiles[4, 4].tT);
-        // Debug.Log(allTiles[0, 3].tT + " | " + allTiles[1, 3].tT + " | " + allTiles[2, 3].tT + " | " + allTiles[3, 3].tT + " | " + allTiles[4, 3].tT);
-        // Debug.Log(allTiles[0, 2].tT + " | " + allTiles[1, 2].tT + " | " + allTiles[2, 2].tT + " | " + allTiles[3, 2].tT + " | " + allTiles[4, 2].tT);
-        // Debug.Log(allTiles[0, 1].tT + " | " + allTiles[1, 1].tT + " | " + allTiles[2, 1].tT + " | " + allTiles[3, 1].tT + " | " + allTiles[4, 1].tT);
-        // Debug.Log(allTiles[0, 0].tT + " | " + allTiles[1, 0].tT + " | " + allTiles[2, 0].tT + " | " + allTiles[3, 0].tT + " | " + allTiles[4, 0].tT);
-        // Debug.Log("----------------------");
+        //Debug.Log(allTiles[0, 3].tT + " | " + allTiles[1, 3].tT + " | " + allTiles[2, 3].tT + " | " + allTiles[3, 3].tT + " | " + allTiles[4, 3].tT);
+        //Debug.Log(allTiles[0, 2].tT + " | " + allTiles[1, 2].tT + " | " + allTiles[2, 2].tT + " | " + allTiles[3, 2].tT + " | " + allTiles[4, 2].tT);
+        //Debug.Log(allTiles[0, 1].tT + " | " + allTiles[1, 1].tT + " | " + allTiles[2, 1].tT + " | " + allTiles[3, 1].tT + " | " + allTiles[4, 1].tT);
+        //Debug.Log(allTiles[0, 0].tT + " | " + allTiles[1, 0].tT + " | " + allTiles[2, 0].tT + " | " + allTiles[3, 0].tT + " | " + allTiles[4, 0].tT);
+        //Debug.Log("----------------------");
     }
 #endregion
 
@@ -334,10 +334,6 @@ public class GameManager : MonoBehaviour
 
     private bool CheckCombat(Vector2Int from, Vector2Int to, Vector2Int dir)
     {
-        if(allTiles[to.x, to.y].tT == TileTipe.Block || (allTiles[from.x, from.y].tT == TileTipe.Block)){
-            return true;
-        }
-
         //¿siguente tile ocupado?
         if (allTiles[to.x, to.y].ocupy)
         {
