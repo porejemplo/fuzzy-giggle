@@ -35,7 +35,7 @@ MonoBehaviour:
     cantidad: 1
   - Id: {fileID: 11400000, guid: 8694ab964a9b5584789d3aed2aafd24b, type: 2}
     tT: 4
-    cantidad: 2
+    cantidad: 1
   - Id: {fileID: 11400000, guid: 662e2d7a22e2bd64884a18d989f140aa, type: 2}
     tT: 4
     cantidad: 1

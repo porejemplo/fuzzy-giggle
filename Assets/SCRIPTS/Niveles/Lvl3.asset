@@ -30,9 +30,6 @@ MonoBehaviour:
   - Id: {fileID: 11400000, guid: c93f8a8b6d8bb9c42a81874a19b9a9fc, type: 2}
     tT: 2
     cantidad: 3
-  - Id: {fileID: 11400000, guid: c3e0d3d6493f8ad42b77ba8db83e5b58, type: 2}
-    tT: 4
-    cantidad: 1
   - Id: {fileID: 11400000, guid: 97fdb9bb01187274592ad6482d8cb32c, type: 2}
     tT: 4
     cantidad: 1
