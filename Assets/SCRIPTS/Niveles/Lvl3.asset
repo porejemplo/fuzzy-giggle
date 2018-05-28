@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0f74598597fb3e449c1635b3d3e07f3, type: 3}
-  m_Name: Test2
+  m_Name: Lvl3
   m_EditorClassIdentifier: 
   board:
     Rows:
-    - Cols: 00000000
-    - Cols: 00010001
-    - Cols: 00000000
+    - Cols: 00000001
+    - Cols: 00010000
+    - Cols: 00010000
     - Cols: 00000000
   mazmorra:
   - Id: {fileID: 11400000, guid: 083b349b1ed242f4f8b8ba3601cc5541, type: 2}
@@ -27,3 +27,15 @@ MonoBehaviour:
   - Id: {fileID: 11400000, guid: 444df45a2ed187a408d36069d246f361, type: 2}
     tT: 4
     cantidad: 2
+  - Id: {fileID: 11400000, guid: c3e0d3d6493f8ad42b77ba8db83e5b58, type: 2}
+    tT: 4
+    cantidad: 1
+  - Id: {fileID: 11400000, guid: 97fdb9bb01187274592ad6482d8cb32c, type: 2}
+    tT: 4
+    cantidad: 1
+  - Id: {fileID: 11400000, guid: 15c19bcb643ec084994540887818cb1b, type: 2}
+    tT: 4
+    cantidad: 2
+  - Id: {fileID: 11400000, guid: 6831bae4432aecc47a586d653f9b6fa3, type: 2}
+    tT: 4
+    cantidad: 3
