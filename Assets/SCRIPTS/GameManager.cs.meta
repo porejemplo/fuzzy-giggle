@@ -1,11 +1,17 @@
 fileFormatVersion: 2
 guid: 8e241112b00abf644ae2a11bbb891894
-timeCreated: 1520788366
-licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - inventory: {instanceID: 0}
+  - sp: {instanceID: 0}
+  - scoreText: {instanceID: 0}
+  - mouse: {instanceID: 0}
+  - Player: {fileID: 1878294593810416, guid: dc53024f53c99bc47ba1d5f513bbeaa4, type: 2}
+  - Enemy: {fileID: 1809844233068652, guid: d02534c655aa7e54ba54fef1b5d8ff61, type: 2}
+  - Item: {fileID: 1783108170161206, guid: bd966e398c510984ab8961bd58ba8bc3, type: 2}
+  - Muro: {fileID: 1720473497841612, guid: 6cd50ed322d36a642af461a78275327c, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

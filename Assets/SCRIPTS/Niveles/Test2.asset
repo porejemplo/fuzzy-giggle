@@ -14,7 +14,7 @@ MonoBehaviour:
   board:
     Rows:
     - Cols: 00000000
-    - Cols: 00010000
+    - Cols: 00010001
     - Cols: 00000000
     - Cols: 00000000
   mazmorra:

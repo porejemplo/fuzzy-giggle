@@ -204,7 +204,7 @@ public class GameManager : MonoBehaviour
                 {
                     for (int y = 1; y < loadLevel.board.Rows.Length; y++)
                     {
-                        if (!allTiles[x, y].ocupy)// || allTiles[x, y - 1].ocupy)
+                        if (!allTiles[x, y].ocupy || allTiles[x, y].tT == TileTipe.Block)// || allTiles[x, y - 1].ocupy)
                             continue;
 
                         for (int i = 1; i <= y; i++)
@@ -232,7 +232,7 @@ public class GameManager : MonoBehaviour
                 {
                     for (int y = loadLevel.board.Rows.Length - 2; y >= 0; y--)
                     {
-                        if (!allTiles[x, y].ocupy)// || allTiles[x, y + 1].ocupy)
+                        if (!allTiles[x, y].ocupy || allTiles[x, y].tT == TileTipe.Block)// || allTiles[x, y + 1].ocupy)
                             continue;
 
                         for (int i = 1; i <= (loadLevel.board.Rows.Length - 1) - y; i++)
@@ -265,7 +265,7 @@ public class GameManager : MonoBehaviour
                 {
                     for (int x = 1; x < loadLevel.board.Rows.Length; x++)
                     {
-                        if (!allTiles[x, y].ocupy)// || allTiles[x - 1, y].ocupy)
+                        if (!allTiles[x, y].ocupy || allTiles[x, y].tT == TileTipe.Block)// || allTiles[x - 1, y].ocupy)
                             continue;
 
                         for (int i = 1; i <= x; i++)
@@ -293,7 +293,7 @@ public class GameManager : MonoBehaviour
                 {
                     for (int x = loadLevel.board.Rows.Length - 2; x >= 0; x--)
                     {
-                        if (!allTiles[x, y].ocupy)// || allTiles[x + 1, y].ocupy)
+                        if (!allTiles[x, y].ocupy || allTiles[x, y].tT == TileTipe.Block)// || allTiles[x + 1, y].ocupy)
                             continue;
 
                         for (int i = 1; i <= (loadLevel.board.Rows.Length - 1) - x; i++)
@@ -450,6 +450,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public GameObject Enemy;
     public GameObject Item;
+    public GameObject Muro;
 
     public AnimationCurve mappingQuality;
 
@@ -506,6 +507,16 @@ public class GameManager : MonoBehaviour
                 allTiles[x, y].Reset(true);
 
                 allTiles[x, y].Pos = new Vector2(x + xOffset + transform.position.x, y + yOffset + transform.position.y);
+
+                if(loadLevel.board[x, y])
+                {
+                    allTiles[x,y].Id = Instantiate(Muro);
+                    allTiles[x, y].Id.transform.SetParent(transform, false);
+                    allTiles[x, y].Id.transform.position = allTiles[x, y].Pos;
+                    allTiles[x, y].Id.transform.SetAsFirstSibling();
+                    allTiles[x,y].tT = TileTipe.Block;
+                    allTiles[x,y].ocupy = true;
+                }
             }
         }
 
@@ -518,6 +529,8 @@ public class GameManager : MonoBehaviour
                 baraja.Add(i);
             }
         }
+
+
 
         SpawnPlayer();
         SpawnRandom();
