@@ -344,17 +344,62 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1.99
-      outSlope: 1.99
+      inSlope: 2.7951612
+      outSlope: 2.7951612
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 1.99
+      time: 0.321985
+      value: 0.9
       inSlope: 1.99
       outSlope: 1.99
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.45873144
+      value: 1.9
+      inSlope: 1.9900001
+      outSlope: 1.9900001
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.58626354
+      value: 2.9
+      inSlope: 1.9899998
+      outSlope: 1.9899998
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.65
+      value: 3.9
+      inSlope: 1.9900002
+      outSlope: 1.9900002
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8655398
+      value: 5.036691
+      inSlope: 1.9899997
+      outSlope: 1.9899997
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 5.9
+      inSlope: 6.420553
+      outSlope: 6.420553
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -363,8 +408,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 0
   lvlList:
-  - {fileID: 11400000, guid: b3cd54ef991c04f4cbddf4cb076c8342, type: 2}
+  - {fileID: 11400000, guid: a7a00fe9076bd414f853839f3bff5d82, type: 2}
+  - {fileID: 11400000, guid: 4ad091895eae04b4cb0db78179fa0b02, type: 2}
+  - {fileID: 11400000, guid: 72272c6ea6a30c44197c695cea9af879, type: 2}
   - {fileID: 11400000, guid: b5bb3914f77f0294683f80ea9d81b1ba, type: 2}
+  - {fileID: 11400000, guid: 9603ddaf80c4fc44e82a7cea494bbc6a, type: 2}
+  - {fileID: 11400000, guid: c3c3121f4f18ca34bb564bfe060d03f3, type: 2}
 --- !u!1001 &350011933
 Prefab:
   m_ObjectHideFlags: 0
