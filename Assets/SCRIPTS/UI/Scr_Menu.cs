@@ -88,8 +88,7 @@ public class Scr_Menu : MonoBehaviour {
 
     public void OnExitClick()
     {
-
-
+        Application.Quit();
     }
 
     public void onBackClick()
