@@ -179,11 +179,11 @@ public class GameManager : MonoBehaviour
         State = GameState.Playing;
 
         // Debug.Log(allTiles[0, 4].tT + " | " + allTiles[1, 4].tT + " | " + allTiles[2, 4].tT + " | " + allTiles[3, 4].tT + " | " + allTiles[4, 4].tT);
-        //Debug.Log(allTiles[0, 3].tT + " | " + allTiles[1, 3].tT + " | " + allTiles[2, 3].tT + " | " + allTiles[3, 3].tT + " | " + allTiles[4, 3].tT);
-        //Debug.Log(allTiles[0, 2].tT + " | " + allTiles[1, 2].tT + " | " + allTiles[2, 2].tT + " | " + allTiles[3, 2].tT + " | " + allTiles[4, 2].tT);
-        //Debug.Log(allTiles[0, 1].tT + " | " + allTiles[1, 1].tT + " | " + allTiles[2, 1].tT + " | " + allTiles[3, 1].tT + " | " + allTiles[4, 1].tT);
-        //Debug.Log(allTiles[0, 0].tT + " | " + allTiles[1, 0].tT + " | " + allTiles[2, 0].tT + " | " + allTiles[3, 0].tT + " | " + allTiles[4, 0].tT);
-        //Debug.Log("----------------------");
+        Debug.Log(allTiles[0, 3].tT + " | " + allTiles[1, 3].tT + " | " + allTiles[2, 3].tT + " | " + allTiles[3, 3].tT);// + " | " + allTiles[4, 3].tT);
+        Debug.Log(allTiles[0, 2].tT + " | " + allTiles[1, 2].tT + " | " + allTiles[2, 2].tT + " | " + allTiles[3, 2].tT);// + " | " + allTiles[4, 2].tT);
+        Debug.Log(allTiles[0, 1].tT + " | " + allTiles[1, 1].tT + " | " + allTiles[2, 1].tT + " | " + allTiles[3, 1].tT);// + " | " + allTiles[4, 1].tT);
+        Debug.Log(allTiles[0, 0].tT + " | " + allTiles[1, 0].tT + " | " + allTiles[2, 0].tT + " | " + allTiles[3, 0].tT);// + " | " + allTiles[4, 0].tT);
+        Debug.Log("----------------------");
     }
 #endregion
 
@@ -417,6 +417,16 @@ public class GameManager : MonoBehaviour
 
             if (baraja.Count <=0 && Pieces.Count <= i)
             {
+                for (int x = 0; x < loadLevel.board.Rows.Length; x++)
+                {
+                    for (int y = 0; y < loadLevel.board.Rows.Length; y++)
+                    {
+                        if (allTiles[x,y].tT == TileTipe.Block)
+                        {
+                            Destroy(allTiles[x,y].Id);
+                        }
+                    }
+                }
                 SpawnBoard();
                 return;
             }
@@ -512,9 +522,6 @@ public class GameManager : MonoBehaviour
         {
             for (int y = 0; y < tamano; y++)
             {
-                if (allTiles[x,y].Id)
-                    Destroy(allTiles[x,y].Id);
-                    
                 allTiles[x, y].Reset(true);
 
                 allTiles[x, y].Pos = new Vector2(x + xOffset + transform.position.x, y + yOffset + transform.position.y);
