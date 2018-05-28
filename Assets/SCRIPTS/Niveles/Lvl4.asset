@@ -13,38 +13,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   board:
     Rows:
+    - Cols: 00000001
+    - Cols: 00000000
     - Cols: 00000000
     - Cols: 01000000
-    - Cols: 01000000
-    - Cols: 01000001
   mazmorra:
   - Id: {fileID: 11400000, guid: c93f8a8b6d8bb9c42a81874a19b9a9fc, type: 2}
     tT: 2
-    cantidad: 3
-  - Id: {fileID: 11400000, guid: 444df45a2ed187a408d36069d246f361, type: 2}
-    tT: 4
     cantidad: 2
   - Id: {fileID: 11400000, guid: 2a8bffa2906c71d47b206ce4ec438c22, type: 2}
-    tT: 4
+    tT: 2
     cantidad: 2
   - Id: {fileID: 11400000, guid: 06826e9a9f804f24a86bb73bfdb45e8d, type: 2}
-    tT: 4
+    tT: 2
     cantidad: 1
   - Id: {fileID: 11400000, guid: 083b349b1ed242f4f8b8ba3601cc5541, type: 2}
     tT: 2
-    cantidad: 3
-  - Id: {fileID: 11400000, guid: 444df45a2ed187a408d36069d246f361, type: 2}
-    tT: 4
-    cantidad: 2
+    cantidad: 1
   - Id: {fileID: 11400000, guid: c3e0d3d6493f8ad42b77ba8db83e5b58, type: 2}
-    tT: 4
-    cantidad: 2
-  - Id: {fileID: 11400000, guid: 97fdb9bb01187274592ad6482d8cb32c, type: 2}
     tT: 4
     cantidad: 1
   - Id: {fileID: 11400000, guid: 662e2d7a22e2bd64884a18d989f140aa, type: 2}
-    tT: 4
-    cantidad: 2
-  - Id: {fileID: 11400000, guid: 5052b9d63c1c07f4fbe2a01de1377264, type: 2}
     tT: 4
     cantidad: 1
