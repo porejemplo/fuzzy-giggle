@@ -574,6 +574,7 @@ namespace CanvasBoard
     {
         public Vector2 Pos;
         public bool ocupy;
+
         public GameObject Id;
         public TileTipe tT;
 
