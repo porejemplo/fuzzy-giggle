@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
 #region Start & Update
     private void Start()
     {
+        for(int i = 0; i<100; i++)
+        {
+            Debug.Log(Mathf.FloorToInt(mappingQuality.Evaluate(Random.value)));
+        }
         SpawnBoard();
     }
 
@@ -204,7 +208,7 @@ public class GameManager : MonoBehaviour
                 {
                     for (int y = 1; y < loadLevel.board.Rows.Length; y++)
                     {
-                        if (!allTiles[x, y].ocupy)// || allTiles[x, y - 1].ocupy)
+                        if (!allTiles[x, y].ocupy || allTiles[x, y].tT == TileTipe.Block)// || allTiles[x, y - 1].ocupy)
                             continue;
 
                         for (int i = 1; i <= y; i++)
@@ -232,7 +236,7 @@ public class GameManager : MonoBehaviour
                 {
                     for (int y = loadLevel.board.Rows.Length - 2; y >= 0; y--)
                     {
-                        if (!allTiles[x, y].ocupy)// || allTiles[x, y + 1].ocupy)
+                        if (!allTiles[x, y].ocupy || allTiles[x, y].tT == TileTipe.Block)// || allTiles[x, y + 1].ocupy)
                             continue;
 
                         for (int i = 1; i <= (loadLevel.board.Rows.Length - 1) - y; i++)
@@ -265,7 +269,7 @@ public class GameManager : MonoBehaviour
                 {
                     for (int x = 1; x < loadLevel.board.Rows.Length; x++)
                     {
-                        if (!allTiles[x, y].ocupy)// || allTiles[x - 1, y].ocupy)
+                        if (!allTiles[x, y].ocupy || allTiles[x, y].tT == TileTipe.Block)// || allTiles[x - 1, y].ocupy)
                             continue;
 
                         for (int i = 1; i <= x; i++)
@@ -293,7 +297,7 @@ public class GameManager : MonoBehaviour
                 {
                     for (int x = loadLevel.board.Rows.Length - 2; x >= 0; x--)
                     {
-                        if (!allTiles[x, y].ocupy)// || allTiles[x + 1, y].ocupy)
+                        if (!allTiles[x, y].ocupy || allTiles[x, y].tT == TileTipe.Block)// || allTiles[x + 1, y].ocupy)
                             continue;
 
                         for (int i = 1; i <= (loadLevel.board.Rows.Length - 1) - x; i++)
@@ -409,13 +413,14 @@ public class GameManager : MonoBehaviour
 
         if (contador > moveTime)
         {
+            int i = 1;
             multiplier = 1;
             scoreText.text = score.ToString();
 
-            UpdatePiecesLists();
+            i += UpdatePiecesLists();
 
-            if (baraja.Count <=0 && Pieces.Count <= 1){
-                
+            if (baraja.Count <=0 && Pieces.Count <= i)
+            {
                 SpawnBoard();
                 return;
             }
@@ -430,17 +435,23 @@ public class GameManager : MonoBehaviour
         State = GameState.PieceMovement;
     }
 
-    private void UpdatePiecesLists()
+    private int UpdatePiecesLists()
     {
+        int i = 0;
         Pieces.Clear();
         for (int x = 0; x < loadLevel.board.Rows.Length; x++)
         {
             for (int y = 0; y < loadLevel.board.Rows.Length; y++)
             {
                 if (allTiles[x, y].ocupy)
+                {
                     Pieces.Add(allTiles[x, y].Id.GetComponent<GamePiece>());
+                    if (allTiles[x, y].tT == TileTipe.Block)
+                        i++;
+                }
             }
         }
+        return i;
     }
 #endregion
 
@@ -450,6 +461,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player;
     public GameObject Enemy;
     public GameObject Item;
+    public GameObject Muro;
 
     public AnimationCurve mappingQuality;
 
@@ -490,6 +502,7 @@ public class GameManager : MonoBehaviour
 
         //Seleccionar y cargar el nivel.
         int rand = Mathf.FloorToInt(mappingQuality.Evaluate(Random.value));
+        //Debug.Log(rand);
         loadLevel = lvlList[rand];
 
         int tamano = loadLevel.board.Rows.Length;
@@ -506,6 +519,16 @@ public class GameManager : MonoBehaviour
                 allTiles[x, y].Reset(true);
 
                 allTiles[x, y].Pos = new Vector2(x + xOffset + transform.position.x, y + yOffset + transform.position.y);
+
+                if(loadLevel.board[x, y])
+                {
+                    allTiles[x,y].Id = Instantiate(Muro);
+                    allTiles[x, y].Id.transform.SetParent(transform, false);
+                    allTiles[x, y].Id.transform.position = allTiles[x, y].Pos;
+                    allTiles[x, y].Id.transform.SetAsFirstSibling();
+                    allTiles[x,y].tT = TileTipe.Block;
+                    allTiles[x,y].ocupy = true;
+                }
             }
         }
 
@@ -519,6 +542,8 @@ public class GameManager : MonoBehaviour
             }
         }
 
+
+
         SpawnPlayer();
         SpawnRandom();
 
@@ -529,10 +554,11 @@ public class GameManager : MonoBehaviour
     {
         UpdateEmptyTiles();
         if (baraja.Count <=0){
-            Debug.LogWarning("No quedan cartas en la baraja");
+            //Debug.LogWarning("No quedan cartas en la baraja");
             return;
         }
 
+        //seleccion posicon
         int rand = Random.Range(0, freeTiles.Count);
 
         int x = freeTiles[rand].x;
@@ -541,6 +567,7 @@ public class GameManager : MonoBehaviour
         rand = Random.Range(0, baraja.Count);
         allTiles[x, y].ocupy = true;
 
+        //Spawn
         if (loadLevel.mazmorra[baraja[rand]].tT == TileTipe.Enemy)
             allTiles[x, y].Id = Instantiate(Enemy);
         else
