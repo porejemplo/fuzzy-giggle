@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
 #region Start & Update
     private void Start()
     {
+        for(int i = 0; i<100; i++)
+        {
+            Debug.Log(Mathf.FloorToInt(mappingQuality.Evaluate(Random.value)));
+        }
         SpawnBoard();
     }
 
@@ -409,13 +413,14 @@ public class GameManager : MonoBehaviour
 
         if (contador > moveTime)
         {
+            int i = 1;
             multiplier = 1;
             scoreText.text = score.ToString();
 
-            UpdatePiecesLists();
+            i += UpdatePiecesLists();
 
-            if (baraja.Count <=0 && Pieces.Count <= 1){
-                
+            if (baraja.Count <=0 && Pieces.Count <= i)
+            {
                 SpawnBoard();
                 return;
             }
@@ -430,17 +435,23 @@ public class GameManager : MonoBehaviour
         State = GameState.PieceMovement;
     }
 
-    private void UpdatePiecesLists()
+    private int UpdatePiecesLists()
     {
+        int i = 0;
         Pieces.Clear();
         for (int x = 0; x < loadLevel.board.Rows.Length; x++)
         {
             for (int y = 0; y < loadLevel.board.Rows.Length; y++)
             {
                 if (allTiles[x, y].ocupy)
+                {
                     Pieces.Add(allTiles[x, y].Id.GetComponent<GamePiece>());
+                    if (allTiles[x, y].tT == TileTipe.Block)
+                        i++;
+                }
             }
         }
+        return i;
     }
 #endregion
 
@@ -491,6 +502,7 @@ public class GameManager : MonoBehaviour
 
         //Seleccionar y cargar el nivel.
         int rand = Mathf.FloorToInt(mappingQuality.Evaluate(Random.value));
+        //Debug.Log(rand);
         loadLevel = lvlList[rand];
 
         int tamano = loadLevel.board.Rows.Length;
@@ -542,7 +554,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateEmptyTiles();
         if (baraja.Count <=0){
-            Debug.LogWarning("No quedan cartas en la baraja");
+            //Debug.LogWarning("No quedan cartas en la baraja");
             return;
         }
 
