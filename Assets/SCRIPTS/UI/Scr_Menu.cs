@@ -13,6 +13,8 @@ public class Scr_Menu : MonoBehaviour {
     public RectTransform menuContainer;
     public Transform levelPanel;
 
+    [SerializeField] string gameplayScene;
+
     private Vector3 desiredMenuPosition;
     
     // Use this for initialization
@@ -71,10 +73,10 @@ public class Scr_Menu : MonoBehaviour {
 
     }
 
-    public void OnPlayClick()
+    public void OnPlayClick(string name)
     {
 
-        NavigateTo(1);
+        SceneManager.LoadScene(name);
 
     }
 
