@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -87,5 +88,6 @@ public class InventoryManager : MonoBehaviour
     private void endGame()
     {
         Debug.Log("Fin");
+        SceneManager.LoadScene(0);
     }
 }
